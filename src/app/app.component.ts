@@ -1,10 +1,18 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {Plog} from '@gpeel/plog';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `
+    <root-refresh-count></root-refresh-count>
+    <h2>Weather !</h2>
+
+  `
 })
 export class AppComponent {
-  title = 'ng-weather';
+  constructor() {
+    Plog.createComponent('Yes');
+    Plog.usecase1('use bbb');
+  }
+
 }

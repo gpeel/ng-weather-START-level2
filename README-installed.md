@@ -1,6 +1,113 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
+# My Usual setting for Angular 13
+
+## eslint settings
+
+In ng12+ no more migration from tslint to eslint, the project comes with no linter at all, so you just need to add eslint
+with:
+
+        ng add @angular-eslint/schematics
+
+## eslint rules
+
+https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/member-ordering.md
+
+## usual eslint plugins
+
+to install because missing by default and used but my rules:
+
+         npm i eslint-plugin-jsdoc
+         npm i eslint-plugin-import
+         npm i eslint-plugin-prefer-arrow
+
+         npm i eslint-plugin-prefer-arrow eslint-plugin-import eslint-plugin-jsdoc
+
+## Webstorm
+
+- activate Eslint Automatic config + fix on save option
+- and disable tslint !
+- Go to Tools -> Actions On Save and check - reformat Code, Optimize Imports, Rearrange Code Run code cleanup and run
+  eslint --fix
+
+# @gpeel/plog /my-perf-tools /my-validators
+
+A few custom lib that i coded: a logger, some perf tools to count the number of Angular DOM refresh cycles, a TS model
+of well known Page, Slice to invoque Spring boot, and tools to validate easily forms and inputs
+
+        npm i @gpeel/plog 
+        npm i @gpeel/my-perf-tools 
+        npm i @gpeel/my-rest-spring-data-model 
+        npm i @gpeel/my-validators
+
+    npm i @gpeel/plog @gpeel/my-perf-tools @gpeel/my-rest-spring-data-model @gpeel/my-validators 
+ 
+ 
+## alias for nice import URLs
+
+In tsconfig.json, add the following under the first {} just after the lib props:
+
+    "paths": {
+      "@libs/*": [
+        "src/libs/*"
+      ],
+      "@shared/*": [
+        "src/app/shared/*"
+      ],
+      "@core/*": [
+        "src/app/core/*"
+      ],
+      "@optional/*": [
+        "src/app/optional/*"
+      ]
+    }
+
+## strict mode in template is not easy at first
+
+I tried to switch to false in tsconfig.json
+
+        "strictTemplates": false
+
+Ok you don't have any problem, but no help either. So after testing it, I don't recommend it.
+
+So the 2 syntax you will need to solve most typescript syntax errors is:  $any and the ! .... like in:
+
+        <input (keyup)="value2=$any($event.target).value" />
+
+https://www.tektutorialshub.com/angular/property-value-does-not-exist-on-type-eventtarget-error-in-angular/
+https://www.designcise.com/web/tutorial/how-to-fix-property-does-not-exist-on-type-eventtarget-typescript-error
+
+In TS with NG12 you are in strictNullCheck mode by default so if a variable is NOT initialized to a type directly, it
+fails because the var cannot be of type undefined. To escape this check add the ! like in
+
+        class Pipo {
+             myTitle!: string; // will not raise any error even in stricNullCheck mode
+        }
+
+Otherwise ERROR : TS2564: Property 'myTitle' has no initializer and is not definitely assigned in the constructor.
+
+# @gpeel/plog setup
+
+To complete the plog setup (logger "a la log4J")
+
+change the environment files as (for example):
+
+For _prod
+
+````typescript
+export const environment = {
+  production: true,
+  plog: {
+    // debug: 'color:limegreen;font-weight:bold',
+    // info: 'color:blue',
+    error: 'color:red',
+    warn: 'color:orange',
+  }
+};
+
+````
+
+for dev
+
+````typescript
 
 export const environment = {
   production: false,
@@ -121,6 +228,7 @@ export const environment = {
     feature7: ['color:mediumspringgreen', 'FEATURE7'],
     feature8: ['color:greenyellow', 'FEATURE8'],
     feature9: ['color:green', 'FEATURE9'],
+
     step1: ['color:blueviolet', 'STEP1'],
     step2: ['color:dodgerblue', 'STEP2'],
     step3: ['color:blue', 'STEP3'],
@@ -130,6 +238,7 @@ export const environment = {
     step7: ['color:mediumspringgreen', 'STEP7'],
     step8: ['color:greenyellow', 'STEP8'],
     step9: ['color:green', 'STEP9'],
+
     usecase1: ['color:blueviolet', 'USECASE1'],
     usecase2: ['color:dodgerblue', 'USECASE2'],
     usecase3: ['color:blue', 'USECASE3'],
@@ -139,6 +248,7 @@ export const environment = {
     usecase7: ['color:mediumspringgreen', 'USECASE7'],
     usecase8: ['color:greenyellow', 'USECASE8'],
     usecase9: ['color:green', 'USECASE9'],
+
     event1: ['color:blueviolet', 'EVENT1'],
     event2: ['color:dodgerblue', 'EVENT2'],
     event3: ['color:blue', 'EVENT3'],
@@ -152,11 +262,4 @@ export const environment = {
   }
 };
 
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+````
