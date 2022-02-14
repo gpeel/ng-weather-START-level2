@@ -1,17 +1,26 @@
-<h4>Template for main page:</h4>
+<h3 class="m-4">Template for main page:</h3>
+
 <div class="container-fluid">
 
-  <div class="well">
-    <h2>Enter a zipcode:</h2>
-    <input class="form-control" id="addLocation" placeholder="Zipcode" type="text">
-    <br>
-    <button class="btn btn-primary" id="addLocationBtn">
-      Add location
-    </button>
+  <div class="card mt-3">
+    <div class="card-body">
+      <h2>Weather App</h2>
+    </div>
   </div>
 
-  <div>
-    <div class="well flex">
+  <div class="card mt-3">
+    <div class="card-body">
+      <h2>Enter a zipcode:</h2>
+      <input class="form-control" id="addLocation" placeholder="Zipcode" type="text">
+      <br>
+      <button class="btn btn-primary" id="addLocationBtn">
+        Add location
+      </button>
+    </div>
+  </div>
+
+  <div class="card mt-3">
+    <div class="card-body">
       <div>
         <h3>Rancho Cordova (95742)</h3>
         <h4>Current conditions: Clouds</h4>
@@ -33,14 +42,14 @@
   </div>
 </div>
 
-<hr>
-<h4>Template for 5-day forecast page:</h4>
-<div class="container-fluid">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">5-day forecast for Rancho Cordova</h3>
+<h3 class="m-4">Template for 5-day forecast page:</h3>
 
+<div class="container-fluid">
+  <div class=".card">
+    <div class="card-header">
+      <h3 class="card-title">5-day forecast for Rancho Cordova</h3>
     </div>
+
     <ul class="list-group">
       <!---->
       <li class="list-group-item">
@@ -84,6 +93,7 @@
         <img class="icon" src="https://www.angulartraining.com/images/weather/snow.png">
       </li>
     </ul>
+
   </div>
   <button class="btn btn-success" id="mainPageBtn" tabindex="0">&lt; Back to main page</button>
 </div>

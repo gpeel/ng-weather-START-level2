@@ -5,3 +5,13 @@
 
 /* Importing Datepicker SCSS file. */
 @import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
+
+
+.card-body, .card-header {
+  background-color: #f0f0f0;
+  border: solid lightgrey;
+}
+
+.list-group-item {
+  border: solid lightgrey;
+}

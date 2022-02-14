@@ -5,7 +5,6 @@ import {Plog} from '@gpeel/plog';
   selector: 'app-root',
   template: `
     <root-refresh-count></root-refresh-count>
-    <h2>Weather !</h2>
     <static-weather></static-weather>
 
   `
