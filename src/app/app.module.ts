@@ -6,10 +6,11 @@ import {PlogModule} from '@gpeel/plog';
 import {environment} from '../environments/environment';
 
 import {AppComponent} from './app.component';
+import {StaticWeatherComponent} from './static/static-weather.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent, StaticWeatherComponent
   ],
   imports: [
     FormsModule,

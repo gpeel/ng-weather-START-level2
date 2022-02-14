@@ -1,0 +1,24 @@
+{
+  "extends": [
+    "../../../.eslintrc.json"
+  ],
+  "rules": {
+    "eqeqeq": "warn",
+    "@angular-eslint/directive-selector": [
+      "error",
+      {
+        "type": "attribute",
+        "prefix": "static",
+        "style": "camelCase"
+      }
+    ],
+    "@angular-eslint/component-selector": [
+      "error",
+      {
+        "type": "element",
+        "prefix": "static",
+        "style": "kebab-case"
+      }
+    ]
+  }
+}

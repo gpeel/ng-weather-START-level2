@@ -6,6 +6,7 @@ import {Plog} from '@gpeel/plog';
   template: `
     <root-refresh-count></root-refresh-count>
     <h2>Weather !</h2>
+    <static-weather></static-weather>
 
   `
 })

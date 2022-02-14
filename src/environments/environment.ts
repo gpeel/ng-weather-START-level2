@@ -11,10 +11,10 @@ export const environment = {
     warn: 'color:orange',
 
     // Performance logs
-    perf: 'color:darkturquoise',
-    perfComponent: ['color:darkturquoise', 'PERF-¤¤'],
-    perfCD: ['color:darkturquoise', 'PERF-¤¤¤¤¤¤¤'],
-    perfDom: ['color:darkturquoise', 'PERF-¤-¤-¤-¤'],
+    // perf: 'color:darkturquoise',
+    // perfComponent: ['color:darkturquoise', 'PERF-¤¤'],
+    // perfCD: ['color:darkturquoise', 'PERF-¤¤¤¤¤¤¤'],
+    // perfDom: ['color:darkturquoise', 'PERF-¤-¤-¤-¤'],
 
     // NG hooks
     ngOnChanges: ['color:orange', 'OnChange'],
