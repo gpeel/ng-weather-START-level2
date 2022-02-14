@@ -1,0 +1,43 @@
+{
+  "coord": {
+  "lon": -121.22,
+    "lat": 38.6
+},
+  "weather": [
+  {
+    "id": 800,
+    "main": "Clear",
+    "description": "clear sky",
+    "icon": "01d"
+  }
+],
+  "base": "stations",
+  "main": {
+  "temp": 78.28,
+    "feels_like": 72.46,
+    "temp_min": 75.99,
+    "temp_max": 80.01,
+    "pressure": 1014,
+    "humidity": 27
+},
+  "visibility": 16093,
+  "wind": {
+  "speed": 6.93,
+    "deg": 300
+},
+  "clouds": {
+  "all": 5
+},
+  "dt": 1592342174,
+  "sys": {
+  "type": 1,
+    "id": 4887,
+    "country": "US",
+    "sunrise": 1592311204,
+    "sunset": 1592364687
+},
+  "timezone": -25200,
+  "id": 0,
+  "name": "Rancho Cordova",
+  "cod": 200
+}

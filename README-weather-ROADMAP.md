@@ -5,5 +5,5 @@
 
 STATIC site
 
-weather icons
+
 

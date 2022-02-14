@@ -7,6 +7,7 @@ import {environment} from '../environments/environment';
 
 import {AppComponent} from './app.component';
 import {StaticWeatherComponent} from './static/static-weather.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {StaticWeatherComponent} from './static/static-weather.component';
     BrowserModule,
     //
     PlogModule.forRoot(environment),
-    MyPerfModule
+    MyPerfModule,
+    BrowserAnimationsModule
   ],
   bootstrap: [AppComponent]
 })
