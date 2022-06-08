@@ -2,8 +2,8 @@
 
 ## eslint settings
 
-In ng12+ no more migration from tslint to eslint, the project comes with no linter at all, so you just need to add eslint
-with:
+In ng12+ no more migration from tslint to eslint, the project comes with no linter at all, so you just need to add
+eslint with:
 
         ng add @angular-eslint/schematics
 
@@ -39,9 +39,10 @@ of well known Page, Slice to invoque Spring boot, and tools to validate easily f
         npm i @gpeel/my-validators
 
     npm i @gpeel/plog @gpeel/my-perf-tools @gpeel/my-rest-spring-data-model @gpeel/my-validators 
- 
- 
+
 ## alias for nice import URLs
+
+(not set on this project)
 
 In tsconfig.json, add the following under the first {} just after the lib props:
 
